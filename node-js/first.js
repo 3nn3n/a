@@ -1,6 +1,6 @@
 const button = document.getElementById("fetch");
 const resultDiv = document.getElementById("result");
-const API_KEY = "YOUR_API_KEY_HERE"; // Replace with your Alpha Vantage API Key
+const API_KEY = "API";
 
 button.addEventListener("click", async () => {
     const symbol = document.getElementById("symbol").value.trim().toUpperCase();
@@ -32,7 +32,6 @@ async function fetchStockPrice(symbol) {
         `;
         resultDiv.innerHTML = stockHTML;
 
-        // Auto-refresh every 1 minute
         setTimeout(() => fetchStockPrice(symbol), 60000);
     } catch (error) {
         console.error("Error fetching stock price:", error);
